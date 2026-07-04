@@ -1,0 +1,69 @@
+# دليل Git السريع - محمد وآية
+
+رابط المشروع:
+https://github.com/Mohammed2025-almadhoun/-.git
+
+==================================================
+القاعدة الذهبية 🚨
+قبل أن تبدأ أي شغل دائماً نفذ:
+
+git pull origin main
+
+==================================================
+إذا عدلت على المشروع وتريد رفع التعديلات:
+
+1. أضف الملفات:
+   git add .
+
+2. احفظ التعديلات:
+   git commit -m "كتابة وصف للتعديل"
+
+مثال:
+git commit -m "Updated login page"
+
+3. ارفع التعديلات إلى GitHub:
+   git push origin main
+
+==================================================
+إذا الطرف الثاني رفع تعديلات جديدة:
+
+قم بتنزيلها إلى جهازك:
+
+git pull origin main
+
+==================================================
+مثال عملي
+
+محمد بدأ الشغل:
+git pull origin main
+
+محمد عدل صفحة التسجيل:
+git add .
+git commit -m "Updated register page"
+git push origin main
+
+---
+
+آية تريد رؤية تعديلات محمد:
+git pull origin main
+
+آية عدلت صفحة تسجيل الدخول:
+git add .
+git commit -m "Updated login page"
+git push origin main
+
+---
+
+محمد يريد تنزيل تعديلات آية:
+git pull origin main
+
+==================================================
+الأوامر التي سنستخدمها دائماً
+
+تنزيل آخر التعديلات:
+git pull origin main
+
+رفع التعديلات:
+git add .
+git commit -m "وصف التعديل"
+git push origin main
