@@ -1,0 +1,133 @@
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.card {
+  width: 900px;
+  background: white;
+  border-radius: 18px;
+  padding: 45px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  text-align: center;
+}
+
+.card h1{
+  font-size:38px;
+  color:#222;
+  margin-bottom:12px;
+}
+
+.card>p{
+  color:#666;
+  font-size:18px;
+  margin-bottom:40px;
+}
+
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:35px;
+}
+
+.accountCard{
+  width:300px;
+  min-height:360px;
+  border:1px solid #e2e2e2;
+  border-radius:15px;
+  padding:30px 25px;
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.accountCard:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.customerIcon,
+.sellerIcon{
+  font-size:75px;
+  margin-bottom:20px;
+}
+
+.customerIcon{
+  color:#2f855a;
+}
+
+.sellerIcon{
+  color:#8b1e2d;
+}
+
+.accountCard h2{
+  font-size:28px;
+  margin-bottom:18px;
+  color:#222;
+}
+
+.accountCard p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:18px;
+  color:#666;
+  line-height:1.8;
+  margin-bottom:35px;
+}
+
+
+.customerBtn, 
+.sellerBtn{
+    width: 170px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+.customerBtn{
+    background: #2f855a;
+}
+
+
+.customerBtn:hover{
+  background:#256948;
+}
+
+.sellerBtn{
+    background: #8b1e2d;
+}
+
+
+.sellerBtn:hover{
+  background:#711722;
+}
+
+@media (max-width:900px){
+
+.card{
+  width:100%;
+}
+
+.cards{
+  flex-direction:column;
+  align-items:center;
+}
+
+.accountCard{
+  width:100%;
+  max-width:340px;
+}
+
+}

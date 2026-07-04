@@ -1,0 +1,283 @@
+
+.container {
+min-height: 100vh;
+background: #f4f6f8;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 30px;
+direction: rtl;
+}
+
+.card {
+width: 100%;
+max-width: 520px;
+background: #ffffff;
+padding: 30px;
+border-radius: 16px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.PersonalData {
+   color: #8b1e2d;
+  margin: 25px 0 15px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #8b1e2d;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card input,
+.card select,
+.card textarea {
+   width:100%;
+    padding: 12px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    border:1px solid #dcdcdc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.card input:focus,
+.card select:focus,
+.card textarea:focus {
+  border-color: #8b1e2d;
+  box-shadow: 0 0 5px rgba(139, 30, 45, 0.3);
+}
+
+.card input::placeholder,
+.card textarea::placeholder {
+  text-align: right;
+}
+
+.sectionTitle {
+  color: #8b1e2d;
+  margin: 25px 0 15px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 14px;
+}
+
+
+.checkbox{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0 15px;
+}
+
+.checkbox input{
+    width: auto;
+    margin: 0;
+}
+
+
+.checkbox span{
+    color: #555;
+    font-size: 14px;
+}
+
+.submitBtn {
+   width: 100%;
+   background: #8b1e2d;
+   color: white;
+   border: none;
+   padding: 15px;
+   border-radius: 8px;
+   font-size: 17px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.submitBtn:hover {
+    background: #6f1723;
+}
+
+.loginLink {
+    text-align: center;
+    margin-top: 20px;
+    color: #555
+}
+
+.loginLink a {
+    color: #8b1e2d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.loginLink a:hover {
+    text-decoration: underline;
+}
+
+.card input[type="file"]{
+    padding: 10px;
+    background: fafafa;
+    border: 2px dashed #d7d7d7;
+    cursor: pointer;
+}
+
+.card input[type="file"] :hover {
+    border-color: #8b1e2d;
+}
+
+.card textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+.card form{
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+   width: 100%;
+  height: 50px;
+  padding: 0 15px 0 45px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+    padding: 0 45px 0 15px;
+
+}
+
+.icon{
+    position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 18px;
+  pointer-events: none;
+  right: 15px;
+  left: auto;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea{
+    width:100%;
+    padding-right:50px;
+}
+
+.iconText {
+  position: absolute;
+  right: 16px;
+  top: 18px;
+  color: #777;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.inputGroup textarea {
+  padding-top: 14px;
+  resize: vertical;
+}
+
+.fileGroup{
+    position: relative;
+    margin-bottom:20px;
+}
+
+.fileGroup input[type="file"]{
+    width:100%;
+    padding:14px 50px 14px 15px;
+    border:1px dashed #ccc;
+    border-radius:8px;
+    background:#fff;
+    cursor:pointer;
+}
+
+.fileIcon{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#777;
+    font-size:18px;
+    pointer-events:none;
+}
+
+
+
+.errorInput{
+border:2px solid #e53935 !important;
+}
+
+.errorText{
+color:#e53935;
+font-size:13px;
+margin-top:-10px;
+margin-bottom:10px;
+padding-right:5px;
+}
+
+.errorBox{
+background:#ffe8e8;
+border:1px solid #ffb7b7;
+padding:12px;
+border-radius:8px;
+color:#d32f2f;
+text-align:center;
+margin-bottom:15px;
+}
+
+
+@media (max-width: 768px){
+    .card{
+        padding: 25px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+}
+
