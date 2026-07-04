@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "../styles/SellerRegister.module.css";
 
+
+
 import {
   FaUser,
   FaEnvelope,
@@ -13,8 +15,6 @@ import {
   FaMapMarkerAlt,
   FaFileUpload,
 } from "react-icons/fa";
-
-
 
 import { MdCategory, MdDescription } from "react-icons/md";
 
@@ -38,19 +38,33 @@ export default function SellerRegister() {
     profileImage: null,
     agreeTerms: false,
   });
-const [errors, setErrors] = useState({});
-  
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value, files, type, checked } = e.target;
 
+    const fieldValue = type === "checkbox" ? checked : files ? files[0] : value;
+
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? checked : files ? files[0] : value,
+      [name]: fieldValue,
     });
+
+    // التحقق من البريد الإلكتروني أثناء الكتابة
+    if (name === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      setErrors((prev) => ({
+        ...prev,
+        email:
+          value && !emailRegex.test(value)
+            ? "صيغة البريد الإلكتروني غير صحيحة"
+            : "",
+      }));
+    }
   };
 
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
@@ -59,8 +73,20 @@ const handleSubmit = (e) => {
       newErrors.general = "لا يوجد اتصال بالإنترنت";
     }
 
-    if (formData.password.length < 8) {
-      newErrors.password = "كلمة المرور يجب أن تحتوي على 8 أحرف على الأقل";
+    // البريد الإلكتروني
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "صيغة البريد الإلكتروني غير صحيحة";
+    }
+
+    // كلمة المرور القوية
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if (!passwordRegex.test(formData.password)) {
+      newErrors.password =
+        "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص.";
     }
 
     if (formData.password !== formData.confirmPassword) {
@@ -77,7 +103,7 @@ const handleSubmit = (e) => {
 
     router.push("/register-success");
   };
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -115,17 +141,17 @@ const handleSubmit = (e) => {
             </div>
           </div>
 
-          <div className={styles.inputGroup}>
-            <FaEnvelope className={styles.icon} />
-            <input
-              type="email"
-              name="email"
-              placeholder="البريد الإلكتروني"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="البريد الإلكتروني"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className={errors.email ? styles.errorInput : ""}
+          />
+
+          {errors.email && <p className={styles.errorText}>{errors.email}</p>}
 
           <div className={styles.inputGroup}>
             <FaPhoneAlt className={styles.icon} />
@@ -277,11 +303,11 @@ const handleSubmit = (e) => {
             <span>أوافق على الشروط والأحكام وسياسة الخصوصية</span>
           </div>
 
-           {/* رسالة الإنترنت */}
+          {/* رسالة الإنترنت */}
           {errors.general && (
             <div className={styles.errorBox}>{errors.general}</div>
           )}
-        
+
           <button type="submit" className={styles.submitBtn}>
             إنشاء حساب بائع
           </button>

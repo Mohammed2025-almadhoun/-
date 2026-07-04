@@ -36,6 +36,18 @@ export default function CustomerRegister() {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+
+    if (name === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      setErrors((prev) => ({
+        ...prev,
+        email:
+          value && !emailRegex.test(value)
+            ? "صيغة البريد الإلكتروني غير صحيحة"
+            : "",
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -47,8 +59,20 @@ export default function CustomerRegister() {
       newErrors.general = "لا يوجد اتصال بالإنترنت";
     }
 
-    if (formData.password.length < 8) {
-      newErrors.password = "كلمة المرور يجب أن تحتوي على 8 أحرف على الأقل";
+    // التحقق من البريد الإلكتروني
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "صيغة البريد الإلكتروني غير صحيحة";
+    }
+
+    // التحقق من قوة كلمة المرور
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if (!passwordRegex.test(formData.password)) {
+      newErrors.password =
+        "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص.";
     }
 
     if (formData.password !== formData.confirmPassword) {
@@ -105,14 +129,17 @@ export default function CustomerRegister() {
 
           <div className={styles.inputGroup}>
             <FaEnvelope className={styles.icon} />
+
             <input
               type="email"
               name="email"
               placeholder="البريد الإلكتروني"
               value={formData.email}
               onChange={handleChange}
-              required
+              className={errors.email ? styles.errorInput : ""}
             />
+
+            {errors.email && <p className={styles.errorText}>{errors.email}</p>}
           </div>
 
           <div className={styles.inputGroup}>
@@ -202,9 +229,6 @@ export default function CustomerRegister() {
           </div>
 
           {/* رسالة الإنترنت */}
-          {errors.general && (
-            <div className={styles.errorBox}>{errors.general}</div>
-          )}
           {errors.general && (
             <div className={styles.errorBox}>{errors.general}</div>
           )}
