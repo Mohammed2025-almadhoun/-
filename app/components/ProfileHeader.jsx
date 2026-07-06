@@ -1,5 +1,5 @@
-import ProfileAvatar from './ProfileAvatar';
-import styles from '../styles/SellerProfile.module.css';
+import ProfileAvatar from "./ProfileAvatar";
+import styles from "@/styles/ProfileHeader.module.css";
 
 export default function ProfileHeader({ seller, onImageUpload }) {
   return (

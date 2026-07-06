@@ -1,4 +1,4 @@
-import CustomerRegister from "@/app/components/CustomerRegister";
+import CustomerRegister from "@/components/CustomerRegister";
 
 export default function CustomerRegisterPage() {
   return (
