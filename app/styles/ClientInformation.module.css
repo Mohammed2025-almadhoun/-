@@ -1,0 +1,121 @@
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  padding: 28px 32px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+  direction: rtl;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #EEF5EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #5F745C;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.body {
+  margin-top: 8px;
+}
+/* ... الكود السابق دون تغيير حتى نصل إلى الـ row والـ label ... */
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* يوزع العناصر ليصبح الأول يمين والثاني يسار */
+  height: 70px;
+  border-bottom: 1px solid #f0f0f0;
+  direction: rtl; /* يضمن الترتيب من اليمين إلى اليسار للمحتوى العربي */
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  width: 140px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a1a1a;
+  flex-shrink: 0;
+  text-align: right; /* محاذاة النص داخل العنوان إلى اليمين */
+}
+
+.value {
+  flex: 1;
+  font-size: 16px;
+  color: #666;
+  text-align: right;
+}
+
+/* ... باقي الكود الخاص بـ editButton دون تغيير ... */
+.editButton {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #EEF5EF;
+  color: #5F745C;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background: #dce8dd;
+}
+
+.editButton:active {
+  transform: scale(0.98);
+}
+
+.editButton:focus-visible {
+  outline: 2px solid #5F745C;
+  outline-offset: 3px;
+}
+
+.editIcon {
+  font-size: 22px;
+}
+
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 12px 0;
+    gap: 4px;
+  }
+  
+  .label {
+    width: 100%;
+  }
+  
+  .value {
+    text-align: right; /* على الهواتف يفضل قراءتها من اليمين أيضاً */
+  }
+}

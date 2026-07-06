@@ -1,5 +1,4 @@
-import SellerProfile from "../../components/SellerProfile";
-
+import SellerProfile from "@/components/SellerProfile";
 
 export default function Home() {
   return <SellerProfile />;

@@ -1,5 +1,5 @@
 import { FaCamera } from "react-icons/fa";
-import styles from "../styles/Avatar.module.css";
+import styles from "@/styles/Avatar.module.css";
 
 export default function ProfileAvatar({ image, onUpload }) {
   const handleFileChange = (e) => {

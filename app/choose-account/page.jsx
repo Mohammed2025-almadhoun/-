@@ -2,18 +2,16 @@
 
 import Link from "next/link";
 import { FaUser, FaStore } from "react-icons/fa";
-import styles from "../styles/ChooseAccount.module.css";
+import styles from "@/styles/ChooseAccount.module.css";
 
 export default function ChooseAccount() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-
         <h1>اختر نوع الحساب للمتابعة</h1>
         <p>اختر نوع الحساب الذي تريد تسجيل الدخول إليه</p>
 
         <div className={styles.cards}>
-
           <div className={styles.accountCard}>
             <FaUser className={styles.customerIcon} />
 
@@ -26,9 +24,7 @@ export default function ChooseAccount() {
             </p>
 
             <Link href="/register/customer">
-              <button className={styles.customerBtn}>
-                دخول كعميل
-              </button>
+              <button className={styles.customerBtn}>دخول كعميل</button>
             </Link>
           </div>
 
@@ -44,14 +40,10 @@ export default function ChooseAccount() {
             </p>
 
             <Link href="/register/seller">
-              <button className={styles.sellerBtn}>
-                دخول كبائع
-              </button>
+              <button className={styles.sellerBtn}>دخول كبائع</button>
             </Link>
           </div>
-
         </div>
-
       </div>
     </div>
   );

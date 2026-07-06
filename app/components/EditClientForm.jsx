@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { MdStorefront } from 'react-icons/md';
-import styles from '../styles/EditStoreForm.module.css';
+import { FaUser } from 'react-icons/fa';
+import styles from '@/styles/EditClientForm.module.css';
 
 const fields = [
-  { label: 'اسم المتجر', key: 'storeName' },
-  { label: 'نوع النشاط', key: 'category' },
-  { label: 'وصف المتجر', key: 'businessDescription'},
   { label: 'البريد الإلكتروني', key: 'email', type: 'email' },
   { label: 'رقم الهاتف', key: 'phone', type: 'tel' },
+  { label: 'تاريخ الميلاد', key: 'dateOfBirth', type: 'date' },
+  { label: 'الجنس', key: 'gender', type: 'select', options: ['ذكر', 'أنثى'] },
   { label: 'الموقع', key: 'location' },
 ];
 
-export default function EditStoreForm({ seller, onSave, onCancel }) {
-  const [form, setForm] = useState({ ...seller });
+export default function EditClientForm({ client, onSave, onCancel }) {
+  const [form, setForm] = useState({ ...client });
 
   const handleChange = (key, value) => {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -28,9 +27,9 @@ export default function EditStoreForm({ seller, onSave, onCancel }) {
       <div className={styles.card} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <div className={styles.iconBox}>
-            <MdStorefront />
+            <FaUser />
           </div>
-          <h2 className={styles.title}>تعديل معلومات المتجر</h2>
+          <h2 className={styles.title}>تعديل معلومات العميل</h2>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -39,13 +38,27 @@ export default function EditStoreForm({ seller, onSave, onCancel }) {
               <label className={styles.label} htmlFor={field.key}>
                 {field.label}
               </label>
-              <input
-                id={field.key}
-                className={styles.input}
-                type={field.type || 'text'}
-                value={form[field.key] || ''}
-                onChange={(e) => handleChange(field.key, e.target.value)}
-              />
+              {field.type === 'select' ? (
+                <select
+                  id={field.key}
+                  className={styles.input}
+                  value={form[field.key] || ''}
+                  onChange={(e) => handleChange(field.key, e.target.value)}
+                >
+                  <option value="">اختر</option>
+                  {field.options.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  id={field.key}
+                  className={styles.input}
+                  type={field.type || 'text'}
+                  value={form[field.key] || ''}
+                  onChange={(e) => handleChange(field.key, e.target.value)}
+                />
+              )}
             </div>
           ))}
 

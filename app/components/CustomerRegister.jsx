@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"; // للانتقال الى صفحة تسجيل الدخول بنجاح
 import { useState } from "react";
-import styles from "../styles/CustomerRegister.module.css";
+import styles from "@/styles/CustomerRegister.module.css";
 
 import {
   FaUser,
