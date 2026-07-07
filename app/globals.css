@@ -1,8 +1,36 @@
 @import "tailwindcss";
+:root {
+  /* الألوان الرئيسية للمشروع (الأخضر والأحمر والداكن والأبيض) */
+  --primary: #0a5c47;       /* اللون الأخضر الرئيسي */
+  --red-accent: #e43137;   /* اللون الأحمر النقشة/المطرزات */
+  --text-dark: #1a1a1a;    /* لون خلفية الفوتر أو النصوص الداكنة */
+  --white: #ffffff;        /* اللون الأبيض */
+  
+  /* الإعدادات الإضافية المستخدمة في كودك */
+  --radius-xl: 16px;
+  --transition: all 0.3s ease;
+  --font-cairo: 'Cairo', sans-serif;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #0B5D47;
+  --secondary: #2E7D5A;
+  --red-accent: #C62828;
+  --white: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-muted: #6b7280;
+  --light-beige: #f8f5f0;
+  --cream: #f5efe6;
+  --transition: all 0.3s ease;
+  --font-cairo: "Cairo", Arial, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
 }
 
 @theme inline {

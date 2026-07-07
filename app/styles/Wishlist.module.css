@@ -1,0 +1,246 @@
+.page {
+  direction: rtl;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 0 36px;
+}
+
+.heroTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.heroSubtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  background: var(--light-beige);
+  position: relative;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  color: var(--red-accent);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.removeBtn:hover {
+  background: var(--red-accent);
+  color: var(--white);
+}
+
+.cardBody {
+  padding: 16px;
+}
+
+.cardCategory {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.priceCurrency {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.addToCartBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--primary);
+  border-radius: 50px;
+  transition: var(--transition);
+  font-family: var(--font-cairo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.addToCartBtn:hover {
+  background: var(--secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.continueBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  transition: var(--transition);
+  font-family: var(--font-cairo);
+}
+
+.continueBtn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Empty State */
+.empty {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.emptyIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--light-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--primary);
+}
+
+.emptyTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.emptyDesc {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.shopBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: var(--transition);
+  font-family: var(--font-cairo);
+}
+
+.shopBtn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page {
+    padding: 0 16px 60px;
+  }
+
+  .hero {
+    padding: 32px 0 24px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .imageWrapper {
+    height: 150px;
+  }
+
+  .cardBody {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroTitle {
+    font-size: 24px;
+  }
+}

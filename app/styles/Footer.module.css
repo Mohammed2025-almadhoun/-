@@ -1,0 +1,232 @@
+.heritageBanner {
+  direction: rtl;
+  margin: 0 20px 60px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary) 0%, #084d3a 50%, #063d2e 100%);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.heritageBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heritagePattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.06;
+  background:
+    radial-gradient(circle at 30% 40%, var(--red-accent) 2px, transparent 2px),
+    radial-gradient(circle at 70% 60%, var(--white) 1px, transparent 1px),
+    radial-gradient(circle at 50% 80%, var(--red-accent) 1px, transparent 1px),
+    radial-gradient(circle at 20% 70%, var(--white) 2px, transparent 2px);
+  background-size: 70px 70px, 50px 50px, 60px 60px, 80px 80px;
+}
+
+.heritageContent {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  max-width: 600px;
+}
+
+.heritageLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+}
+
+.heritageHeading {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.heritageHeading span {
+  display: block;
+}
+
+.heritageParagraph {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+}
+
+.heritageBtn {
+  padding: 14px 32px;
+  background: var(--white);
+  color: var(--primary);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+  font-family: var(--font-cairo);
+}
+
+.heritageBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Footer */
+.footer {
+  direction: rtl;
+  background: var(--text-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 60px 20px 0;
+}
+
+.footerInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footerLogo .logoArabic {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.footerLogo .logoEnglish {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.footerDescription {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 14px;
+}
+
+.footerTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: var(--transition);
+}
+
+.footerLink:hover {
+  color: var(--white);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 12px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.socialLink {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  transition: var(--transition);
+  font-size: 16px;
+}
+
+.socialLink:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 992px) {
+  .heritageContent {
+    padding: 40px;
+  }
+
+  .heritageHeading {
+    font-size: 28px;
+  }
+
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heritageBanner {
+    margin: 0 16px 40px;
+    min-height: 260px;
+  }
+
+  .heritageContent {
+    padding: 30px;
+  }
+
+  .heritageHeading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer {
+    padding: 40px 16px 0;
+  }
+}
